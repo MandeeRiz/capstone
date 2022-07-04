@@ -1,50 +1,50 @@
 
 //refector route controllers
-exports.getAllRecipes = (req, res)=>{
-    res.status(500).json({
-        status:"fail",
+exports.getAllRecipes = async (req, res)=>{
+    res.status(200).json({
+        status:"success",
         data:{
-            message:"undefined routes",
+            message:"Get All Recipes",
         }
     });
 }
 
 //add new recipe
-exports.addNewRecipe = (req, res)=>{
-    res.status(500).json({
-        status:"fail",
+exports.addNewRecipe = async (req, res)=>{
+    res.status(200).json({
+        status:"success",
         data:{
-            message:"undefined routes",
+            message:"Add a New Recipe",
         }
     });
 }
 
 //get an individual recipe
-exports.getSingleRecipe = (req, res)=>{
-    res.status(500).json({
-        status:"fail",
+exports.getSingleRecipe = async (req, res)=>{
+    res.status(200).json({
+        status:"success",
         data:{
-            message:"undefined routes",
+            message:"Get Single Recipe",
         }
     });
 }
 
 //edit a single recipe
-exports.editSingleRecipe = (req, res)=>{
-    res.status(500).json({
-        status:"fail",
+exports.editSingleRecipe = async (req, res)=>{
+    res.status(200).json({
+        status:"success",
         data:{
-            message:"undefined routes",
+            message:`Update Recipe ${req.params.id}`,
         }
     });
 }
 
 //delete a single recipe
-exports.deleteSingleRecipe = (req, res)=>{
-    res.status(500).json({
-        status:"fail",
+exports.deleteSingleRecipe = async (req, res)=>{
+    res.status(200).json({
+        status:"success",
         data:{
-            message:"undefined routes",
+            message:`Delete recipe ${req.params.id}` ,
         }
     });
 }

@@ -14,7 +14,7 @@ Router.route("/") .get(recipeController.getAllRecipes)
 
 //get, edit & delete individual recipes
 Router.route("/:id") .get(recipeController.getSingleRecipe)
-                            .put(recipeController.editSingleRecipe)
-                            .delete(recipeController.deleteSingleRecipe)
+                    .put(recipeController.editSingleRecipe)
+                    .delete(recipeController.deleteSingleRecipe)
 
 module.exports = Router;
