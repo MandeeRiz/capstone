@@ -42,32 +42,55 @@ exports.addNewRecipe = async (req, res)=>{
 }
 
 //get an individual recipe
-exports.getSingleRecipe = async (req, res)=>{
+exports.getSingleRecipe = async (req, res)=> {
+    try{
+        const singleRecipe = await Recipe.findById(req.params.id);
+    
     res.status(200).json({
         status:"success",
         data:{
-            message:"Get Single Recipe",
-        }
+            singleRecipe: singleRecipe,
+        },      
+    });
+} catch (error){
+    res.status(500).json({
+        status: "error",
+        message: error,
     });
 }
+};
 
 //edit a single recipe
 exports.editSingleRecipe = async (req, res)=>{
+    try {
+        const editRecipe = await Recipe.findByIdAndUpdate(req.params.id, req.body, {new:true})
     res.status(200).json({
         status:"success",
         data:{
-            message:`Update Recipe ${req.params.id}`,
+            editRecipe,
         }
     });
+} catch (error){
+    res.status(500).json({
+        status:"error",
+        message: error,
+    })
+}
 }
 
 //delete a single recipe
 exports.deleteSingleRecipe = async (req, res)=>{
-    res.status(200).json({
-        status:"success",
-        data:{
-            message:`Delete recipe ${req.params.id}` ,
-        }
-    });
-}
+    try{
+        await Recipe.findByIdAndDelete(req.params.id);
+        res.status(204).json({
+            status:"success",
+            data:{},
+        });
+    } catch (error){
+        res.status(500).json({
+            status:"error",
+            message:error,
+        });
+    }
+};
 
