@@ -1,12 +1,24 @@
+//import Recipes from models moongoose schema
+const Recipe = require ("../models/recipeModel")
+
 
 //refector route controllers
 exports.getAllRecipes = async (req, res)=>{
+    try{
+        const recipes = await Recipe.find();
+    
     res.status(200).json({
         status:"success",
         data:{
-            message:"Get All Recipes",
-        }
+            recipes: recipes,
+        },
     });
+} catch (error) {
+    res.status(500).json({
+        status:"error",
+        message: error,
+    })
+}
 }
 
 //add new recipe
