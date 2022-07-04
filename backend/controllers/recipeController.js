@@ -1,4 +1,5 @@
 //import Recipes from models moongoose schema
+const { response } = require("express");
 const Recipe = require ("../models/recipeModel")
 
 
@@ -23,12 +24,21 @@ exports.getAllRecipes = async (req, res)=>{
 
 //add new recipe
 exports.addNewRecipe = async (req, res)=>{
-    res.status(200).json({
+    try {
+        const newRecipe = await Recipe.create(req.body);
+    
+    res.status(201).json({
         status:"success",
         data:{
-            message:"Add a New Recipe",
+            newRecipe: newRecipe,
         }
     });
+} catch (error) {
+    response.status(500).json({
+        status: "error",
+        message: error,
+    })
+}
 }
 
 //get an individual recipe
