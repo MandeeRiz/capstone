@@ -14,7 +14,7 @@ const Mangia = mongoose.connect(process.env.DATABASE).then(()=> {
 
 
 //create a variable that stores our port number
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 //listen to the request/response cycle
 app.listen(port, ()=> {

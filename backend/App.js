@@ -5,6 +5,10 @@ const recipeRouter = require("./routes/recipeRoutes")
 //create a variable to store our express methods
 const app = express();
 
+const cors = require("cors");
+
+app.use(cors());
+
 app.use(express.json())
 
 // middleware to handle our routes
