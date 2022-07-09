@@ -8,18 +8,33 @@ const RecipeList = () => {
         // function to retrive data from Atlas db
 const fetchFunction = async () => {
 const response = await axios.get("http://localhost:3001/recipes/");
-const data = response.data;
-setEachRecipe(data.results);
-console.log(data);
-console.log(eachRecipe);
+const data = response.data.data;
+setEachRecipe(data.recipes);
 };
+
 fetchFunction();
+    }, []);
+    // console.log(eachRecipe);
+    // console.log(typeof eachRecipe);
+    // console.log(eachRecipe.recipes)
+
+    const listedRecipes = eachRecipe.map((element, index) => {
+        return (
+            <div key={element._id} className="App">
+              {element.name}
+              <br></br>
+              {element.description}
+              <br></br>
+              {element.ingredients}
+            </div>
+        );
     })
-return (
-    <div className="App">
-        Recipes List
+return(
+    <div>
+        <h3>recipes list</h3>
+        <>{listedRecipes}</>
     </div>
-);
+)
 }
 
 export default RecipeList;

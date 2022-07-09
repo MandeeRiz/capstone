@@ -1,12 +1,16 @@
+//import App form App.js
 const app = require("./App")
 
+//require mongoose
 const mongoose = require("mongoose");
 
+//use our config.env file
 const dotenv = require("dotenv");
 dotenv.config({
     path: "./config.env"
 })
 
+//use mongoose to connect to our db
 const Mangia = mongoose.connect(process.env.DATABASE).then(()=> {
     console.log("Database is up and running");
 });
