@@ -4,7 +4,7 @@ import axios from "axios";
 
 
 //component
-export const RecipeAdd = () => {
+const RecipeAdd = () => {
 
     //states
     const [name, setName] = useState(" ");

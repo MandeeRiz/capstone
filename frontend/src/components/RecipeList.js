@@ -31,6 +31,7 @@ fetchFunction();
       {element.description}
     </Card.Text>
     <Button variant="primary">See Full Recipe</Button>
+    <>{element._id}</>
   </Card.Body>
 </Card>
 
