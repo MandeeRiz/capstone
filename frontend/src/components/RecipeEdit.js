@@ -11,11 +11,14 @@ const RecipeEdit = () => {
     const [description, setDescription] = useState(" ");
     const [picture, setPicture] = useState(" ")
     const [ingredients, setIngredients] = useState([])
+    const id= window.location.pathname.replace("/edit/", "")
 
     const editRecipe = () => {
-        axios.put("http://localhost:3001/recipes/62cb16895cf97e25019c0e6b", {name, description, picture, ingredients})
+        axios.put(`http://localhost:3001/recipes/${id}`, {name, description, picture, ingredients})
+        .then (window.location = "/")
     }
 
+    
 
     return(
     <div className = "App">
@@ -32,7 +35,7 @@ const RecipeEdit = () => {
         <label htmlFor=" ">Ingredients: </label>
         <input type="text" onChange={(e) => {setIngredients(e.target.value)}}/>
         <br/><br/>
-        <button onClick={editRecipe}>Add New Recipe</button>
+        <button onClick={editRecipe}>Submit Changes</button>
     </div>
     );
 }

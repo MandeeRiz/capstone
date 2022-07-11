@@ -14,6 +14,7 @@ const RecipeAdd = () => {
 
     const addNewRecipe = () => {
         axios.post("http://localhost:3001/recipes/", {name, description, picture, ingredients})
+        .then (window.location = "/")
     }
 
 

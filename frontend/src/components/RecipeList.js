@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import {Card} from "react-bootstrap";
 import {Button} from "react-bootstrap";
+import {Link} from "react-router-dom";
 
 const RecipeList = () => {
+
     const [eachRecipe, setEachRecipe] = useState([]);
 
     useEffect(()=> {
@@ -16,37 +18,24 @@ setEachRecipe(data.recipes);
 
 fetchFunction();
     }, []);
-    // console.log(eachRecipe);
-    // console.log(typeof eachRecipe);
-    // console.log(eachRecipe.recipes)
 
-    const listedRecipes = eachRecipe.map((element, index) => {
+    const listedRecipes = eachRecipe.map((element) => {
         return (
-
             <Card key = {element._id} style={{ width: '18rem' }}>
-  <Card.Img variant="top" src={element.picture}/>
-  <Card.Body>
-    <Card.Title>{element.name}</Card.Title>
-    <Card.Text>
-      {element.description}
-    </Card.Text>
-    <Button variant="primary">See Full Recipe</Button>
-    <>{element._id}</>
-  </Card.Body>
-</Card>
-
-            // <div key={element._id} className="App">
-            //   {element.name}
-            //   <br></br>
-            //   {element.description}
-            //   <br></br>
-            //   {element.ingredients}
-            // </div>
+            <Card.Img variant="top" src={element.picture}/>
+            <Card.Body>
+            <Card.Title>{element.name}</Card.Title>
+            <Card.Text>{element.description}</Card.Text>
+            <Link to={`/recipe/${element._id}`}>
+            <Button variant="primary">See Full Recipe</Button>
+            </Link>
+            </Card.Body>
+            </Card>
         );
     })
 return(
     <div>
-        <h3>All My Delicious Recipes</h3>
+        <h2>All My Delicious Recipes</h2>
         <>{listedRecipes}</>
     </div>
 )
