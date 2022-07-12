@@ -9,16 +9,17 @@ const RecipeEdit = () => {
     //states
     const [name, setName] = useState(" ");
     const [description, setDescription] = useState(" ");
-    const [picture, setPicture] = useState(" ")
-    const [ingredients, setIngredients] = useState([])
-    const id= window.location.pathname.replace("/edit/", "")
+    const [picture, setPicture] = useState(" ");
+    const [ingredients, setIngredients] = useState([]);
 
+    //get id from browser URL
+    const id= window.location.pathname.replace("/edit/", "");
+
+    // function to edit indivdual recipe
     const editRecipe = () => {
         axios.put(`http://localhost:3001/recipes/${id}`, {name, description, picture, ingredients})
-        .then (window.location = "/")
+        .then (window.location = "/");
     }
-
-    
 
     return(
     <div className = "App">
@@ -40,6 +41,5 @@ const RecipeEdit = () => {
     );
 }
 
-
-//exports
+//export to Recipe.js
 export default RecipeEdit;

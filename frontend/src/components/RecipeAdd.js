@@ -2,7 +2,6 @@
 import React, {useState} from "react";
 import axios from "axios";
 
-
 //component
 const RecipeAdd = () => {
 
@@ -10,13 +9,13 @@ const RecipeAdd = () => {
     const [name, setName] = useState(" ");
     const [description, setDescription] = useState(" ");
     const [picture, setPicture] = useState(" ")
-    const [ingredients, setIngredients] = useState([])
+    const [ingredients, setIngredients] = useState([]);
 
+    //function to post new recipe to the database
     const addNewRecipe = () => {
         axios.post("http://localhost:3001/recipes/", {name, description, picture, ingredients})
-        .then (window.location = "/")
+        .then (window.location = "/");
     }
-
 
     return(
     <div className = "App">
@@ -39,5 +38,5 @@ const RecipeAdd = () => {
 }
 
 
-//exports
+//export to App.js
 export default RecipeAdd;

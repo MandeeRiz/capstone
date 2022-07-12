@@ -2,7 +2,7 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import {BrowserRouter as Router, Route, Link} from "react-router-dom";
-import RecipeEdit from "./RecipeEdit"
+import RecipeEdit from "./RecipeEdit";
 
 //component
 const Recipe = ({match}) => {
@@ -10,12 +10,12 @@ const Recipe = ({match}) => {
 
     const deleteRecipe = (params) => {
         axios.delete(`http://localhost:3001/recipes/${params}`)
-        .then (window.location = "/")
+        .then (window.location = "/");
     }
 
     useEffect(()=> {
 
-    // function to retrive data from Atlas db
+// function to retrive data from Atlas db
 const fetchFunction = async () => {
     const response = await axios.get(`http://localhost:3001/recipes/${match.params.id}`);
     const data = response.data.data.singleRecipe
@@ -42,5 +42,6 @@ const fetchFunction = async () => {
     )
 }
 
+//export to App.js
 export default Recipe;
 
