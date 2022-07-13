@@ -1,5 +1,4 @@
 //import Recipes from models moongoose schema
-const { response } = require("express");
 const Recipe = require ("../models/recipeModel")
 
 
@@ -34,7 +33,7 @@ exports.addNewRecipe = async (req, res)=>{
         }
     });
 } catch (error) {
-    response.status(500).json({
+    res.status(500).json({
         status: "error",
         message: error,
     })

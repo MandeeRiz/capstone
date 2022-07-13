@@ -27,7 +27,8 @@ const fetchFunction = async () => {
 
     return(
         <div className = "App">
-            <div className = "recipe">
+            <br></br>
+            <div id="box">
                 <div id="img">
                     <img alt={recipe.name} src={recipe.picture}/>
                 </div>

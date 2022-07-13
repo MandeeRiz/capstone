@@ -23,17 +23,21 @@ const RecipeEdit = () => {
 
     return(
     <div className = "App">
-        <h1>edit recipe</h1>
+        <h3 id="editTitle">Edit Recipe</h3>
         <label htmlFor=" "> Name: </label>
+        <br></br>
         <input type="text" onChange= {(e) => {setName(e.target.value)}}/>
         <br/><br/>
         <label htmlFor=" ">Description: </label>
+        <br></br>
         <input type="text" onChange={(e) => {setDescription(e.target.value)}}/>
         <br/><br/>
         <label htmlFor=" ">Picture: </label>
+        <br></br>
         <input type="text" onChange={(e) => {setPicture(e.target.value)}}/>
         <br/><br/>
         <label htmlFor=" ">Ingredients: </label>
+        <br></br>
         <input type="text" onChange={(e) => {setIngredients(e.target.value)}}/>
         <br/><br/>
         <button onClick={editRecipe}>Submit Changes</button>

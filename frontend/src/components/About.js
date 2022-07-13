@@ -1,17 +1,10 @@
 import React from "react";
 
 const About = () => {
-    // .recipe{
-    //     display:inline-block;
-    //     padding:1%;
-    //     border-style: double;
-    //     margin:1%;
-    //     width: 70%;
-    // } 
     return(
         <div id="about">
-            <h3>Who? What? Where? When? Why?</h3>
-            <p>I began this page to satisfy requirements for my final capstone project. 
+            <h3 className="abouts">Who? What? Where? When? Why?</h3>
+            <p className="aboutss">I began this page to satisfy requirements for my final capstone project. 
                 I just needed to create a CRUD full stack application. It seemed to me that a culinary page
                 dedicated to my favorite recipes would do just the trick. I had been meaning to 
                 put all of my recipes in a safe place for my children to access as they grow. During this project I got to 

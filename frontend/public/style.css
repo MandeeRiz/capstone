@@ -1,5 +1,7 @@
 .App{
-    align-content: center;
+    padding: 1%;
+    font-family: 'Courier New', Courier, monospace;
+    color:#3D3C3A;
 }
 
 #title {
@@ -57,3 +59,35 @@ ul{
     margin: .5%;
 } 
 
+#box {
+     display:inline-block;
+     padding:1%;
+     border-style: double;
+     margin: 0 auto;
+     width: 70%;
+     align-self: center;
+ } 
+
+ #img{
+     border-radius: 5%;
+ }
+
+ .abouts{
+     font-family: 'Courier New', Courier, monospace;
+     color:#3D3C3A;
+     padding: 10px;
+     text-align: center;
+     font-weight: 800;
+ }
+
+ .aboutss{
+    font-family: 'Courier New', Courier, monospace;
+    color:#3D3C3A;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-bottom: 80px;
+ }
+
+ #editTitle{
+     text-align: center;
+ }
