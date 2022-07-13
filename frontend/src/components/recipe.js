@@ -27,10 +27,19 @@ const fetchFunction = async () => {
 
     return(
         <div className = "App">
-            {recipe.name}
-            {recipe.description}
-            <img alt={recipe.name} src={recipe.picture}/>
-            {recipe.ingredients}
+            <div className = "recipe">
+                <div id="img">
+                    <img alt={recipe.name} src={recipe.picture}/>
+                </div>
+                <div>
+                    <h3>{recipe.name}</h3>
+                    <div>
+                        {recipe.description}
+                    </div>
+                    <div>
+                        {recipe.ingredients}
+                    </div>
+                </div>
             <button onClick={()=>deleteRecipe(recipe._id)}> Delete Recipe </button> 
             <Router>
                 <Link to={`/edit/${recipe._id}`}>
@@ -38,6 +47,7 @@ const fetchFunction = async () => {
                 </Link>
                 <Route exact path="/edit/:id" component = {RecipeEdit}/>
             </Router>
+            </div>
         </div>
     )
 }

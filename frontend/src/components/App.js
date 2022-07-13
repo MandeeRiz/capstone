@@ -3,6 +3,7 @@ import React from "react";
 import  RecipeAdd from "./RecipeAdd";
 import RecipeList from "./RecipeList";
 import Recipe from "./Recipe";
+import About from "./About";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
 
@@ -21,7 +22,9 @@ const App = () => {
                     <Link to= "/add">
                     <ul>New Recipe</ul>
                     </Link>
+                    <Link to="/about">
                     <ul>About</ul>
+                    </Link>
                 </li>
                 <hr id="hr"></hr>
             </div>
@@ -30,6 +33,7 @@ const App = () => {
                         <Route exact path="/" component={RecipeList}/>
                         <Route exact path="/add" component={RecipeAdd}/>
                         <Route exact path="/recipe/:id" component={Recipe}/>
+                        <Route exact path="/about" component={About}/>
                     </Switch>
             </div>
             </Router>
