@@ -32,12 +32,17 @@ fetchFunction();
             </Link>
             </Card.Body>
             </Card>
+            
         );
     })
 return(
     <div>
         <h2 className="subtitle">All My Delicious Recipes</h2>
-        <>{listedRecipes}</>
+        <div className="container">
+            <div className="row">
+                {listedRecipes}     
+            </div>
+        </div>
     </div>
 )
 }

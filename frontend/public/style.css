@@ -47,3 +47,12 @@ ul{
     text-align: center;
 }
 
+.row{
+    align-content:stretch;
+    display: flex;
+    justify-content: space-between;
+}
+
+ .card{
+    margin: .5%;
+} 

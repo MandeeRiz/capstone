@@ -21,7 +21,7 @@ const App = () => {
                     <Link to= "/add">
                     <ul>New Recipe</ul>
                     </Link>
-                
+                    <ul>About</ul>
                 </li>
                 <hr id="hr"></hr>
             </div>
