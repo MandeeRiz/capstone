@@ -60,12 +60,11 @@ ul{
 } 
 
 #box {
-     display:inline-block;
+     display:center;
      padding:1%;
      border-style: double;
      margin: 0 auto;
      width: 70%;
-     align-self: center;
  } 
 
  #img{

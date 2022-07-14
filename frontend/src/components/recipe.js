@@ -25,6 +25,7 @@ const fetchFunction = async () => {
     fetchFunction();
 },[]);
 
+
     return(
         <div className = "App">
             <br></br>
