@@ -23,7 +23,7 @@ const fetchFunction = async () => {
     };
 
     fetchFunction();
-},[]);
+},[recipe]);
 
 
     return(
@@ -47,7 +47,9 @@ const fetchFunction = async () => {
                 <Link to={`/edit/${recipe._id}`}>
                     <button> Edit Recipe </button>
                 </Link>
-                <Route exact path="/edit/:id" component = {RecipeEdit}/>
+                <Route exact path="/edit/:id">
+                    <RecipeEdit/>
+                </Route> 
             </Router>
             </div>
         </div>

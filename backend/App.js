@@ -9,7 +9,7 @@ const app = express();
 const cors = require("cors");
 
 //use cors to allow development of front end
-app.use(cors());
+app.use(cors({orgin: "https://localhost:3000"}));
 
 //use json data
 app.use(express.json())
