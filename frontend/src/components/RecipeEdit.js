@@ -12,6 +12,11 @@ const RecipeEdit = () => {
     const [picture, setPicture] = useState(" ");
     const [ingredients, setIngredients] = useState([]);
 
+    // setName(recipe.name)
+    // setDescription(recipe.description)
+    // setPicture(recipe.picture)
+    // setIngredients(recipe.ingredients)
+
     //get id from browser URL
     const id= window.location.pathname.replace("/edit/", "");
 
@@ -34,19 +39,19 @@ const RecipeEdit = () => {
         <h3 id="editTitle">Edit Recipe</h3>
         <label htmlFor=" "> Name: </label>
         <br></br>
-        <input type="text" value={recipe.name} onChange= {(e) => {setName(e.target.value)}}/>
+        <input type="text" defaultValue={recipe.name} onLoad={(e)=> setName(e.target.defaultValue)} onChange= {(e) => {setName(e.target.value)}}/>
         <br/><br/>
         <label htmlFor=" ">Description: </label>
         <br></br>
-        <input type="text" value={recipe.description} onChange={(e) => {setDescription(e.target.value)}}/>
+        <input type="text" defaultValue={recipe.description} onLoad={(e)=> setName(e.target.defaultValue)} onChange={(e) => {setDescription(e.target.value)}}/>
         <br/><br/>
         <label htmlFor=" ">Picture: </label>
         <br></br>
-        <input type="text" value={recipe.picture}onChange={(e) => {setPicture(e.target.value)}}/>
+        <input type="text" defaultValue={recipe.picture} onLoad={(e)=> setName(e.target.defaultValue)} onChange={(e) => {setPicture(e.target.value)}}/>
         <br/><br/>
         <label htmlFor=" ">Ingredients: </label>
         <br></br>
-        <input type="text" value={recipe.ingredients} onChange={(e) => {setIngredients(e.target.value)}}/>
+        <input type="text" defaultValue={recipe.ingredients} onLoad={(e)=> setName(e.target.defaultValue)} onChange={(e) => {setIngredients(e.target.value)}}/>
         <br/><br/>
         <button onClick={editRecipe}>Submit Changes</button>
     </div>
